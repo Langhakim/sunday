@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> div,form </title>
+    <style>
+        *{
+            font-size: 14pt; font-weight: bold;
+            margin-left: 5px;
+        }
+
+
+        .input_group{
+            height: 40px;
+            border-bottom: 1px dotted #AACC;
+        }
+    </style>
+
+    <script>
+        function myNullCheck(){
+            var dname = document.myform.user_name.value;
+            if ( dname == " " || dname == null ){
+                alert("이름 입력 데이터 공백입니다. \n 다시 입력하세요.");
+            } else{
+                document.myform.user_name.focus();
+            }
+        }
+    </script>
+
+</head>
+<body>
+    <div>
+        <form name="myform">
+            <fieldset>
+                <legend> 신규회원가입 </legend>
+
+                <div class="input_group">
+                    <label for=""> 이름 : </label>
+                    <input type="text" name="user_name" id="user_name">
+                </div>
+
+                <div class="input_group">
+                    <label for=""> 비번 : </label>
+                    <input type="password" name="user_password" id="user_password">
+                </div>
+
+                <div class="input_group">
+                    <label for=""> 전번 : </label>
+                    <input type="text" name="user_phone" id="user_phone">
+                </div>
+
+                <div class="input_group">
+                    <label for=""> 성별 : </label>
+                    <label> <input type="radio" name="user_gender" id="user_gender" value="M"> 
+                    남자
+                    <input type="radio" name="user_gender" id="user_gender" value="W" checked>
+                    여자
+                </div>
+                    </label>
+                    <div class="input_group">
+                        <label for=""> 직업 : </label>
+                        <select name="job">
+                            <option value="" selected>----선택하세요----</option>
+                            <option value="dev">프로그램개발자</option>
+                            <option value="coder">응용프로그램개발자</option>
+                            <option value="pub">퍼블리셔</option>
+                            <option value="dba">DB관리자</option>
+                        </select>
+                    </div>
+                    
+                    <div class="input_group">
+                        <label for="">파일 : </label>
+                        <input type="file" name="myfile" id="myfile">
+                    </div>
+
+                    <div class="input_group">
+                        <label for=""></label>
+                        <input type="button" onclick="myNullCheck()" value="가입하기">
+                        <input type="reset" value="입력취소">
+                    </div>
+
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>
